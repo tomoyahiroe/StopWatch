@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>簡易ストップウォッチ</title>
+    <meta name="description" meta content="サイトの説明" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+    <!--レスポンシブのためにデバイスに応答して文字を大きく表示-->
+    <!--- CSS! -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!--- googleフォントの設定-->
+
+    <!--- java scirpt -->
+    <script>
+      window.onload = function () {
+        var startButton = document.getElementById("start");
+        var stopButton = document.getElementById("stop");
+        var resetButton = document.getElementById("reset");
+        var display = document.getElementById("display");
+        var startTime, timer;
+        var stopTime = 0;
+        startButton.onclick = start;
+        resetButton.onclick = reset;
+        function start() {
+          startButton.onclick = null;
+          stopButton.onclick = stop;
+          startTime = new Date();
+          timer = setInterval(function () {
+            var now = new Date();
+            display.innerHTML = (
+              (now - startTime + Number(stopTime) * 1000) /
+              1000
+            ).toFixed(2);
+          }, 10);
+        }
+        function reset() {
+          clearInterval(timer);
+          startButton.onclick = start;
+          stopButton.onclick = stop;
+          display.innerHTML = "0.00";
+          stopTime = 0;
+        }
+        function stop() {
+          clearInterval(timer);
+          stopTime = display.innerHTML;
+          startButton.onclick = start;
+          stopButton.onclick = null;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>簡易ストップウォッチ</h1>
+    <p id="display">0.00</p>
+    <div class="button-container">
+      <div class="button">
+        <button id="start">スタート</button>
+        <button id="stop">ストップ</button>
+        <button id="reset">リセット</button>
+      </div>
+    </div>
+  </body>
+</html>
