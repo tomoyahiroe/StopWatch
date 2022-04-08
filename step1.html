@@ -1,0 +1,35 @@
+<!--ビックリマークを入力して、タブを押すとテンプレートができる。-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+          const startButton = document.getElementById('start');
+          const display = document.getElementById('display');
+          startButton.onclick = start;
+
+          function start() {
+            startButton.onclick = null;
+            let startTime = new Date();
+            let counter = setInterval(function(){
+              const now = new Date();  
+              display.innerHTML = ((now - startTime)/1000).toFixed(2);
+            })
+          }
+        }
+    </script>
+  </head>
+  <body>
+    <h1>ストップウォッチ<h1>
+    <p id="display">0.00</p>
+    <div class="button">
+        <button id="start">スタート</button>
+        <button id="stop">ストップ</button>
+        <button id="reset">リセット</button>
+    </div>
+  </body>
+</html>

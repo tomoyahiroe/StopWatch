@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>簡易ストップウォッチ</title>
-    <meta name="description" meta content="サイトの説明" />
-    <meta name="viewpoint" content="width=device-width, initial-scale=1" />
-    <!--レスポンシブのためにデバイスに応答して文字を大きく表示-->
-    <!--- CSS! -->
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <!--- googleフォントの設定-->
-
-    <!--- java scirpt -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <script>
       window.onload = function () {
-        var startButton = document.getElementById("start");
-        var stopButton = document.getElementById("stop");
-        var resetButton = document.getElementById("reset");
-        var display = document.getElementById("display");
-        var startTime, timer;
-        var stopTime = 0;
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const resetButton = document.getElementById("reset");
+        const display = document.getElementById("display");
+        let startTime, timer;
+        let stopTime = 0;
         startButton.onclick = start;
         resetButton.onclick = reset;
         function start() {
@@ -27,7 +27,7 @@
           stopButton.onclick = stop;
           startTime = new Date();
           timer = setInterval(function () {
-            var now = new Date();
+            const now = new Date();
             display.innerHTML = (
               (now - startTime + Number(stopTime) * 1000) /
               1000
@@ -51,13 +51,17 @@
     </script>
   </head>
   <body>
-    <h1>簡易ストップウォッチ</h1>
-    <p id="display">0.00</p>
-    <div class="button-container">
-      <div class="button">
-        <button id="start">スタート</button>
-        <button id="stop">ストップ</button>
-        <button id="reset">リセット</button>
+    <div class="container">
+      <h1>ストップウォッチ</h1>
+      <div class="stop-watch">
+        <div class="display"><p id="display">0.00</p></div>
+        <div class="button-container">
+          <div class="button">
+            <button class="btn btn-outline-primary" id="start">スタート</button>
+            <button class="btn btn-outline-primary" id="stop">ストップ</button>
+            <button class="btn btn-outline-primary" id="reset">リセット</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
