@@ -66,6 +66,7 @@ presented by Lumos
 * console.log([出力したいもの])
 * 関数の書き方
 function 関数名(){処理}
+例：function plus(a,b) {console.log(a+b);}
 * setInterval([関数],[ミリ秒数])
 
 ---
