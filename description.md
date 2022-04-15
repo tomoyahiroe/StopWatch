@@ -7,6 +7,7 @@ style: |
         background-color: #fff;
         font-size: 36px;
         font-family: 'Helvetica', 'ヒラギノ丸ゴ'
+
     }
 ---
 # ストップウォッチ作成体験会
@@ -103,5 +104,7 @@ function 関数名(){処理}
 ![](images/start_motion.png)
 
 ---
+## ストップボタンを作ろう
 
+---
 

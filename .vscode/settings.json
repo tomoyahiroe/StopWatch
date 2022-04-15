@@ -1,4 +1,7 @@
 {
+  "editor.guides.bracketPairs": true,
+  "editor.hover.enabled": false,
+
   "[html]": {
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
