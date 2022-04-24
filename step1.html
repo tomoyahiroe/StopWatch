@@ -9,17 +9,30 @@
     <script>
         window.onload = function () {
           const startButton = document.getElementById('start');
+          const stopButton = document.getElementById('stop');
+          const resetButton = document.getElementById('reset');
           const display = document.getElementById('display');
           startButton.onclick = start;
+          stopButton.onclick = stop;
+          resetButton.onclick = reset;
+          //let counter;
 
           function start() {
-            startButton.onclick = null;
             let startTime = new Date();
-            let counter = setInterval(function(){
+            counter = setInterval(function(){
               const now = new Date();  
               display.innerHTML = ((now - startTime)/1000).toFixed(2);
             })
           }
+          //なぜ、counterのletを外すと機能して、letがあると、clearintervalが機能しなくなるのか？
+          function stop() {
+            clearInterval(counter);
+          }
+
+          function reset() {
+            display.innerHTML = "0.00";
+          }
+
         }
     </script>
   </head>
