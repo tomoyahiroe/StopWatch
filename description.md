@@ -15,6 +15,8 @@ presented by Lumos
 
 ---
 ## ツールのインストール
+* https://jsfiddle.net/vhL283za/46/
+
 * Google Chrome
 (https://www.google.com/intl/ja/chrome/)
 * Visual Studio Code
@@ -35,6 +37,13 @@ presented by Lumos
 すると...
 ![width:1000px](images/templete.png)
 こんな感じに。
+
+---
+## 言語の説明
+* HTML:Webサイトのレイアウトを設定する言語。家だと骨組みや間取り、部屋数などを決める大工に相当する。
+* CSS:Webサイトのデザインを設定する言語。家だと、部屋や家具の配置や色などのデザインを決めるインテリアデザイナーに相当する。
+* JS:Webサイトにおいて、計算などの処理を設定する言語。電気配線や水道などを設置する配線工などに相当する。
+
 
 ---
 ## htmlを書いてみよう
@@ -63,8 +72,8 @@ presented by Lumos
 
 ---
 ## JavaScriptを使ってみよう
-* now = new Date();
-* console.log([出力したいもの])
+* const now = new Date();
+* console.log(now.toString())
 * 関数の書き方
 function 関数名(){処理}
 例：function plus(a,b) {console.log(a+b);}
@@ -89,7 +98,7 @@ function 関数名(){処理}
 1. let startTime = new Date(); //開始時刻を記録
 1. counter = setInterval(function(){
     const now = new Date();
-    display.innerHTML = ((now - startTime)/1000).toFixed
+    display.innerHTML = ((now - startTime)/1000).toFixed(2)
 }, 20); //現在時刻と開始時刻の差をdisplayに反映
 
 ---
