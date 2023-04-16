@@ -9,43 +9,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
     />
-    <script>
-      window.onload = function () {
-        const startButton = document.getElementById("start");
-        const stopButton = document.getElementById("stop");
-        const resetButton = document.getElementById("reset");
-        const display = document.getElementById("display");
-        let startTime, timer;
-        let stopTime = 0;
-        startButton.onclick = start;
-        resetButton.onclick = reset;
-        function start() {
-          startButton.onclick = null;
-          stopButton.onclick = stop;
-          startTime = new Date();
-          timer = setInterval(function () {
-            const now = new Date();
-            display.innerHTML = (
-              (now - startTime + Number(stopTime) * 1000) /
-              1000
-            ).toFixed(2);
-          }, 10);
-        }
-        function reset() {
-          clearInterval(timer);
-          startButton.onclick = start;
-          stopButton.onclick = stop;
-          display.innerHTML = "0.00";
-          stopTime = 0;
-        }
-        function stop() {
-          clearInterval(timer);
-          stopTime = display.innerHTML;
-          startButton.onclick = start;
-          stopButton.onclick = null;
-        }
-      };
-    </script>
   </head>
   <body>
     <div class="container">
