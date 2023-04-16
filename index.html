@@ -7,11 +7,8 @@
     <title>Document</title>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
     />
-    <link rel="stylesheet" href="./style.css" />
     <script>
       window.onload = function () {
         const startButton = document.getElementById("start");
@@ -52,17 +49,53 @@
   </head>
   <body>
     <div class="container">
-      <h1>ストップウォッチ</h1>
+      <h1>Stop Watch</h1>
       <div class="stop-watch">
         <div class="display"><p id="display">0.00</p></div>
         <div class="button-container">
           <div class="button">
-            <button class="btn btn-outline-primary" id="start">スタート</button>
-            <button class="btn btn-outline-primary" id="stop">ストップ</button>
-            <button class="btn btn-outline-primary" id="reset">リセット</button>
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="stop">Stop</button>
+            <button class="btn" id="reset">Reset</button>
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
+<style>
+  .container {
+    text-align: center;
+  }
+  h1 {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #3b3b3b;
+  }
+  .stop-watch {
+    margin-top: 150px;
+  }
+  .display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3b3b3b;
+  }
+  .btn {
+    width: 100px;
+    height: 50px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #ccc;
+  }
+</style>
